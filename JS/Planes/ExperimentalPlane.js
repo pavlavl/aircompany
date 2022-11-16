@@ -14,7 +14,6 @@ class ExperimentalPlane extends Plane
 
     }
 
-
     get model()
     {
         return this._model;

@@ -1,6 +1,5 @@
 const assert = require('chai').assert;
 
-const Plane = require('../Planes/Plane');
 const MilitaryPlane = require('../Planes/MilitaryPlane');
 const PassengerPlane = require('../Planes/PassengerPlane');
 const Airport = require('../Airport');
@@ -30,17 +29,17 @@ describe('AircompanyTests', () => {
     ];
     let planeWithMaxPassengerCapacity = new PassengerPlane('Boeing-747', 980, 16100, 70500, 242);
 
-    it('should have military Planes with transport type', () => {
+    it('should have military planes with transport type', () => {
         let airport = new Airport(planes);
         let transportMilitaryPlanes = airport.getTransportMilitaryPlanes();
-        let flag = false;
+        let isMilitaryTransportType = false;
         for (let militaryPlane of transportMilitaryPlanes) {
             if (militaryPlane.getMilitaryType() === MilitaryType.TYPE_TRANSPORT) {
-                flag = true;
+                isMilitaryTransportType = true;
                 break;
             }
         }
-        assert.equal(flag,true);
+        assert.equal(isMilitaryTransportType, true);
     });
 
     it('should check passenger plane with max capacity', () => {
@@ -69,7 +68,6 @@ describe('AircompanyTests', () => {
     it('should have at least one bomber in military planes', () => {
         let airport = new Airport(planes);
         let bomberMilitaryPlanes  = airport.getBomberMilitaryPlanes ();
-        let flag = false;
         for (let militaryPlane of bomberMilitaryPlanes) {
             assert.isTrue(militaryPlane.getMilitaryType() === MilitaryType.BOMBER);
         }
