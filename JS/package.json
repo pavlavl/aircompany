@@ -4,11 +4,11 @@
   "description": "",
   "main": "",
   "scripts": {
-    "test": "mocha",
+    "test": "npx mocha",
     "start": "node index.js"
   },
   "author": {
-    "name": "Sniazhana Matskevich"
+    "name": "Egor Pavlovskiy"
   },
   "license": "",
   "engines": {
